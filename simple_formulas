@@ -1,0 +1,35 @@
+from math import factorial
+from math import ceil
+
+def permutation(n, r):
+    x = factorial(n)/factorial(n-r)
+    return x
+
+
+def combinations(n, r):
+    x = factorial(n)/(factorial(r)* factorial(n-r))
+    return x
+
+
+def percentile(p, n):
+    x = (n+1)*p/100
+    x = ceil(x)
+    return x
+
+
+def binomial(n, x, p):
+    c = comb(n, x)
+    prob = c*pow(p, x)*pow(1-p, n-x)
+    return prob
+
+
+def prob_AandB(a, b, mutually_exclusive=False):
+    prob = a+b-prob_AorB(a,b)
+    if mutually_exclusive:
+        prob = a+b
+    return prob
+
+
+def prob_AorB(a, b):
+    prob = a*b
+    return prob
