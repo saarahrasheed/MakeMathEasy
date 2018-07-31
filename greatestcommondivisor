@@ -1,0 +1,34 @@
+# encoding=utf-8
+
+import time
+
+
+def gcd(a, b):
+    assert a >= 0 and b >= 0 and a+b > 0
+    if a == 0 or b == 0:
+        return max(a, b)
+    for d in range(min(a, b), 0, -1):
+        if a % d == 0 and b % d == 0:
+            return d
+    return 1
+
+
+def euclid_algo(a, b):
+    # first update: change - into %
+    # since every time a number "a" is subtracted from another "b"
+    # the answer is the same is the remainder of when a/b
+    assert a >= 0 and b >= 0 and a + b > 0
+    while a > 0 and b > 0:
+        print('gcd({} and {})'.format(a, b))
+        if a >= b:
+            a = a % b
+        else:
+            b = b % a
+    return max(a, b)
+
+
+if __name__ == '__main__':
+    start = time.time()
+    divisor = euclid_algo(790933790547, 184939579327)
+    print('Time taken: {}'.format(round(time.time()-start, 2)))
+    print('Divisor is {}'.format(divisor))
