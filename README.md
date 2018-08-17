@@ -1,2 +1,2 @@
 # MakeMathEasy
-Sometimes I am too lazy to take the calculator out. So I create scripts.
+Recreating simple mathematical calculations without the use of libraries
